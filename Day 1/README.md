@@ -6,6 +6,7 @@ Workname: Angular Basic To-do List
 * Config
 * Route Setting
 * Factory
+* Directives (ng-repeat, ng-model, ng-submit, ng-controller, ng-view)
 
 ## What did I learn?
 * Create controller and functions.
