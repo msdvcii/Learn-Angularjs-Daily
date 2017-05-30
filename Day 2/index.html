@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="Ex1">
+<head>
+	<title>Angular Calculator</title>
+
+	<meta charset="utf-8">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<style type="text/css">
+		a {
+		    border: 1px solid rgba(0, 0, 0, 0.14);
+		    display: block;
+		    float: left;
+		    margin-right: 10px;
+		    padding: 10px 25px;
+		    text-decoration: none;
+		    font-family: 'trebuchet ms';
+		    font-size: 12px;
+		    color: #444;
+		}
+
+		a.active-link {
+		    background: #dbdbdb;
+		    color: black;
+		    font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+
+	<div ng-controller="Init">
+		<form>
+			<input type="text" placeholder="1. sayı" ng-model="Numara1">
+			<input type="text" placeholder="2. sayı" ng-model="Numara2">
+			<button ng-click="Islem(Numara1, Numara2, '+')">+</button>
+			<button ng-click="Islem(Numara1, Numara2, '-')">-</button>
+			<button ng-click="Islem(Numara1, Numara2, '*')">*</button>
+			<button ng-click="Islem(Numara1, Numara2, '/')">/</button>
+		</form>
+		<hr ng-if="list.length > 0">
+		<div ng-view></div>
+		<hr>
+		<a href="#/" ng-class="{'active-link' : activeLink === 'All'}" ng-click="activeLink = 'All'">Tüm İşlemler</a>
+		<a href="#/list/toplama" ng-class="{'active-link' : activeLink === 'toplama'}" ng-click="activeLink = 'toplama'">Toplamlar</a>
+		<a href="#/list/cikarma" ng-class="{'active-link' : activeLink === 'cikarma'}" ng-click="activeLink = 'cikarma'">Çıkarmalar</a>
+		<a href="#/list/bolme" ng-class="{'active-link' : activeLink === 'bolme'}" ng-click="activeLink = 'bolme'">Bölmeler</a>
+		<a href="#/list/carpma" ng-class="{'active-link' : activeLink === 'carpma'}" ng-click="activeLink = 'carpma'">Çarpmalar</a>
+	</div>
+
+</body>
+</html>

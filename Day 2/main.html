@@ -1,0 +1,9 @@
+<h2>Yaptığınız Tüm İşlemler: </h2>
+<div ng-controller="Init">
+	<ul>
+		<li ng-repeat="islem in list">{{islem.v1}} <strong style="color: red;">{{islem.s}}</strong> {{islem.v2}} = {{islem.result}}</li>
+	</ul>
+	<div ng-show="!(list).length">
+		<p>Henüz bir kayıt altına alınmamıştır.</p>
+	</div>
+</div>

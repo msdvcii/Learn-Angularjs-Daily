@@ -1,0 +1,9 @@
+<div ng-controller="ListDetailController">
+	<h2>Yaptığınız Tüm <strong style="color: red;">{{islemAdi}}</strong> İşlemleri: </h2>
+	<ul>
+		<li ng-repeat="list in gList | filter: { w: islem }">{{list.v1}} <strong style="color: red;">{{list.s}}</strong> {{list.v2}} = {{list.result}}</li>
+	</ul>
+	<div ng-show="!(gList | filter: { w: islem }).length">
+		<p>Henüz bir <strong style="color: red;">{{islemAdi}}</strong> kayıt altına alınmamıştır.</p>
+	</div>
+</div>
